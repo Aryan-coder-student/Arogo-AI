@@ -1,0 +1,14 @@
+models:
+  loc: ./models/
+  pre_process_pipeline: ./pre_process/preprocessing_pipeline.pkl
+metrics:
+  roc_auc : ./roc_auc_plots/
+  lime_explanation: ./lime_explanations/
+  classification_report: ./classification_reports/
+  confusion_matrix: ./confusion_matrices/
+  feature_importance: ./feature_importance/
+data:
+  raw : ./data/bronze
+  pre_process : ./data/silver
+  train : ./data/gold/train.csv
+  test : ./data/gold/test.csv

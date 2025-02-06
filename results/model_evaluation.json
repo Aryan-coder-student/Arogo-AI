@@ -1,0 +1,158 @@
+{
+    "Logistic Regression": {
+        "best_params": {
+            "C": 0.1,
+            "solver": "lbfgs"
+        },
+        "accuracy": 0.6926229508196722,
+        "precision": 0.7075799798615037,
+        "recall": 0.6926229508196722,
+        "f1_score": 0.6939318188402499,
+        "roc_auc": 0.762589928057554,
+        "confusion_matrix": [
+            [
+                79,
+                26
+            ],
+            [
+                49,
+                90
+            ]
+        ],
+        "classification_report": "              precision    recall  f1-score   support\n\n           0       0.62      0.75      0.68       105\n           1       0.78      0.65      0.71       139\n\n    accuracy                           0.69       244\n   macro avg       0.70      0.70      0.69       244\nweighted avg       0.71      0.69      0.69       244\n"
+    },
+    "Random Forest": {
+        "best_params": {
+            "max_depth": null,
+            "min_samples_leaf": 2,
+            "min_samples_split": 10,
+            "n_estimators": 50
+        },
+        "accuracy": 0.7254098360655737,
+        "precision": 0.7368389740877842,
+        "recall": 0.7254098360655737,
+        "f1_score": 0.7267292910860811,
+        "roc_auc": 0.8110996916752312,
+        "confusion_matrix": [
+            [
+                81,
+                24
+            ],
+            [
+                43,
+                96
+            ]
+        ],
+        "classification_report": "              precision    recall  f1-score   support\n\n           0       0.65      0.77      0.71       105\n           1       0.80      0.69      0.74       139\n\n    accuracy                           0.73       244\n   macro avg       0.73      0.73      0.72       244\nweighted avg       0.74      0.73      0.73       244\n"
+    },
+    "Gradient Boosting": {
+        "best_params": {
+            "learning_rate": 0.1,
+            "max_depth": 3,
+            "n_estimators": 50
+        },
+        "accuracy": 0.7418032786885246,
+        "precision": 0.7483896540926271,
+        "recall": 0.7418032786885246,
+        "f1_score": 0.7429960649634724,
+        "roc_auc": 0.8239465570400822,
+        "confusion_matrix": [
+            [
+                80,
+                25
+            ],
+            [
+                38,
+                101
+            ]
+        ],
+        "classification_report": "              precision    recall  f1-score   support\n\n           0       0.68      0.76      0.72       105\n           1       0.80      0.73      0.76       139\n\n    accuracy                           0.74       244\n   macro avg       0.74      0.74      0.74       244\nweighted avg       0.75      0.74      0.74       244\n"
+    },
+    "SVM (Support Vector Machine)": {
+        "best_params": {
+            "C": 1,
+            "kernel": "rbf"
+        },
+        "accuracy": 0.7213114754098361,
+        "precision": 0.7355347920728068,
+        "recall": 0.7213114754098361,
+        "f1_score": 0.7225502579140757,
+        "roc_auc": 0.7992463172319287,
+        "confusion_matrix": [
+            [
+                82,
+                23
+            ],
+            [
+                45,
+                94
+            ]
+        ],
+        "classification_report": "              precision    recall  f1-score   support\n\n           0       0.65      0.78      0.71       105\n           1       0.80      0.68      0.73       139\n\n    accuracy                           0.72       244\n   macro avg       0.72      0.73      0.72       244\nweighted avg       0.74      0.72      0.72       244\n"
+    },
+    "K-Nearest Neighbors": {
+        "best_params": {
+            "metric": "manhattan",
+            "n_neighbors": 9,
+            "weights": "distance"
+        },
+        "accuracy": 0.680327868852459,
+        "precision": 0.7253009783767188,
+        "recall": 0.680327868852459,
+        "f1_score": 0.6773567781938948,
+        "roc_auc": 0.7630695443645084,
+        "confusion_matrix": [
+            [
+                89,
+                16
+            ],
+            [
+                62,
+                77
+            ]
+        ],
+        "classification_report": "              precision    recall  f1-score   support\n\n           0       0.59      0.85      0.70       105\n           1       0.83      0.55      0.66       139\n\n    accuracy                           0.68       244\n   macro avg       0.71      0.70      0.68       244\nweighted avg       0.73      0.68      0.68       244\n"
+    },
+    "Decision Tree": {
+        "best_params": {
+            "max_depth": null,
+            "min_samples_leaf": 4,
+            "min_samples_split": 10
+        },
+        "accuracy": 0.6557377049180327,
+        "precision": 0.6607325388011295,
+        "recall": 0.6557377049180327,
+        "f1_score": 0.6571390439753542,
+        "roc_auc": 0.7250085645769099,
+        "confusion_matrix": [
+            [
+                68,
+                37
+            ],
+            [
+                47,
+                92
+            ]
+        ],
+        "classification_report": "              precision    recall  f1-score   support\n\n           0       0.59      0.65      0.62       105\n           1       0.71      0.66      0.69       139\n\n    accuracy                           0.66       244\n   macro avg       0.65      0.65      0.65       244\nweighted avg       0.66      0.66      0.66       244\n"
+    },
+    "Naive Bayes": {
+        "best_params": {},
+        "accuracy": 0.6680327868852459,
+        "precision": 0.6809877743817727,
+        "recall": 0.6680327868852459,
+        "f1_score": 0.6695593428705632,
+        "roc_auc": 0.7458718739294279,
+        "confusion_matrix": [
+            [
+                75,
+                30
+            ],
+            [
+                51,
+                88
+            ]
+        ],
+        "classification_report": "              precision    recall  f1-score   support\n\n           0       0.60      0.71      0.65       105\n           1       0.75      0.63      0.68       139\n\n    accuracy                           0.67       244\n   macro avg       0.67      0.67      0.67       244\nweighted avg       0.68      0.67      0.67       244\n"
+    }
+}

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/My%20File/Internship/Arogo%20AI/mlruns/442286927034730397/8a5b6cc2a38941938df74374b0967d48/artifacts
+end_time: 1738835794082
+entry_point_name: ''
+experiment_id: '442286927034730397'
+lifecycle_stage: active
+run_id: 8a5b6cc2a38941938df74374b0967d48
+run_name: Naive Bayes
+run_uuid: 8a5b6cc2a38941938df74374b0967d48
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738835790561
+status: 3
+tags: []
+user_id: ASUS

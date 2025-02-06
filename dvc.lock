@@ -1,0 +1,51 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python src/pre_process.py
+    deps:
+    - path: data/bronze/survey.csv
+      hash: md5
+      md5: 6e7bf171a9f00f5ec306e897bceaecb1
+      size: 303684
+    - path: src/pre_process.py
+      hash: md5
+      md5: 497af0632122d588a143abd2e6a5c093
+      size: 1807
+    - path: src/utils.py
+      hash: md5
+      md5: 606dd67a928fb52cee5c1adafe8031e0
+      size: 3171
+    outs:
+    - path: data/gold/test.csv
+      hash: md5
+      md5: c5aa6bdf8c3b0947cc9d250419ebbc10
+      size: 25524
+    - path: data/gold/train.csv
+      hash: md5
+      md5: 0ed63b8467997391ef59743b4b84db5b
+      size: 101045
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: data/gold/test.csv
+      hash: md5
+      md5: c5aa6bdf8c3b0947cc9d250419ebbc10
+      size: 25524
+    - path: data/gold/train.csv
+      hash: md5
+      md5: 0ed63b8467997391ef59743b4b84db5b
+      size: 101045
+    - path: src/model.py
+      hash: md5
+      md5: 82af7dfbc9c82765a4e002f7de7bc4d5
+      size: 4235
+    - path: src/train.py
+      hash: md5
+      md5: c52c0dec56a08684edf63d422983761b
+      size: 793
+    outs:
+    - path: models/
+      hash: md5
+      md5: e93f898762f62caf2d743b82f7e1c891.dir
+      size: 5578479
+      nfiles: 7

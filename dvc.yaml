@@ -1,0 +1,22 @@
+stages:
+  preprocess:
+    cmd: python src/pre_process.py
+    deps:
+      - src/pre_process.py
+      - src/utils.py
+      - data/bronze/survey.csv
+    outs:
+      - data/gold/train.csv
+      - data/gold/test.csv
+
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - src/model.py
+      - data/gold/train.csv
+      - data/gold/test.csv
+    outs:
+      - models/
+  
+
