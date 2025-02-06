@@ -1,4 +1,8 @@
 stages:
+  requirements:
+    cmd: pip install -r requirements.txt
+    deps:
+      - requirements.txt
   preprocess:
     cmd: python src/pre_process.py
     deps:

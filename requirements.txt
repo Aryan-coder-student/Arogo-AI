@@ -1,10 +1,6 @@
-pytorch 
-torchvision
 numpy
 pandas 
 matplotlib
-transformers
-torchtext
 scikit-learn
 langchain
 lime
@@ -12,5 +8,4 @@ langchain-community
 seaborn
 tqdm
 mlflow
-pickle
 joblib
