@@ -37,8 +37,8 @@ stages:
       size: 101045
     - path: src/model.py
       hash: md5
-      md5: fcf87523a47fd95d268c66aad8aa56b1
-      size: 4207
+      md5: cf7a2ecd8e9bc50cc390903de10e50de
+      size: 6411
     - path: src/train.py
       hash: md5
       md5: c52c0dec56a08684edf63d422983761b
@@ -46,8 +46,8 @@ stages:
     outs:
     - path: models/
       hash: md5
-      md5: f96ae6fda16a4887889c857839035e37.dir
-      size: 5618463
+      md5: 31d83c1554daf4a4660e5a5253491c00.dir
+      size: 5559087
       nfiles: 7
   requirements:
     cmd: pip install -r requirements.txt

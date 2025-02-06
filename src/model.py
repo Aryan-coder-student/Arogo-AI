@@ -42,6 +42,20 @@ param_grids = {
 os.makedirs(model_save_dir, exist_ok=True)
 
 def train_and_evaluate_models(X_train, y_train, X_test, y_test, feature_names):
+    
+    model_save_dir = config["models"]["loc"]
+    roc_auc_dir = config["metrics"]["roc_auc"]
+    classification_report_dir = config["metrics"]["classification_report"]
+    confusion_matrix_dir = config["metrics"]["confusion_matrix"]
+    feature_importance_dir = config["metrics"]["feature_importance"]
+
+ 
+    os.makedirs(model_save_dir, exist_ok=True)
+    os.makedirs(roc_auc_dir, exist_ok=True)
+    os.makedirs(classification_report_dir, exist_ok=True)
+    os.makedirs(confusion_matrix_dir, exist_ok=True)
+    os.makedirs(feature_importance_dir, exist_ok=True)
+
     for name, (model, params) in param_grids.items():
         with mlflow.start_run(run_name=name):
             print(f"Training {name}...")
@@ -53,14 +67,13 @@ def train_and_evaluate_models(X_train, y_train, X_test, y_test, feature_names):
             y_pred = best_model.predict(X_test)
             y_probs = best_model.predict_proba(X_test) if hasattr(best_model, "predict_proba") else None
 
-            
+ 
             accuracy = accuracy_score(y_test, y_pred)
             precision = precision_score(y_test, y_pred, average="weighted")
             recall = recall_score(y_test, y_pred, average="weighted")
             f1 = f1_score(y_test, y_pred, average="weighted")
             roc_auc = roc_auc_score(y_test, y_probs[:, 1]) if y_probs is not None and len(set(y_test)) == 2 else None
 
-            
             mlflow.log_params(grid_search.best_params_)
             mlflow.log_metric("accuracy", accuracy)
             mlflow.log_metric("precision", precision)
@@ -69,7 +82,41 @@ def train_and_evaluate_models(X_train, y_train, X_test, y_test, feature_names):
             if roc_auc is not None:
                 mlflow.log_metric("roc_auc", roc_auc)
 
+         
+            report = classification_report(y_test, y_pred, output_dict=True)
+            report_path = os.path.join(classification_report_dir, f"{name}_classification_report.json")
+            with open(report_path, "w") as f:
+                json.dump(report, f, indent=4)
+            mlflow.log_artifact(report_path)
+
             
+            cm = confusion_matrix(y_test, y_pred)
+            plt.figure(figsize=(8, 6))
+            sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=set(y_test), yticklabels=set(y_test))
+            plt.xlabel("Predicted Label")
+            plt.ylabel("True Label")
+            plt.title(f"Confusion Matrix - {name}")
+            cm_path = os.path.join(confusion_matrix_dir, f"{name}_confusion_matrix.png")
+            plt.savefig(cm_path)
+            plt.close()
+            mlflow.log_artifact(cm_path)
+
+             
+            if roc_auc is not None:
+                fpr, tpr, _ = roc_curve(y_test, y_probs[:, 1])
+                plt.figure(figsize=(8, 6))
+                plt.plot(fpr, tpr, label=f"AUC = {roc_auc:.2f}")
+                plt.plot([0, 1], [0, 1], linestyle="--", color="gray")
+                plt.xlabel("False Positive Rate")
+                plt.ylabel("True Positive Rate")
+                plt.title(f"ROC Curve - {name}")
+                plt.legend()
+                roc_path = os.path.join(roc_auc_dir, f"{name}_roc_auc.png")
+                plt.savefig(roc_path)
+                plt.close()
+                mlflow.log_artifact(roc_path)
+
+           
             if hasattr(best_model, "feature_importances_"):
                 feature_importance = best_model.feature_importances_
             elif hasattr(best_model, "coef_"):
@@ -82,12 +129,14 @@ def train_and_evaluate_models(X_train, y_train, X_test, y_test, feature_names):
                 importance_df = pd.DataFrame({"Feature": feature_names, "Importance": feature_importance})
                 importance_df = importance_df.sort_values(by="Importance", ascending=False)
         
-                os.makedirs("results", exist_ok=True)
-                importance_df.to_csv(os.path.join(f"./feature_importance/{name}_feature_importance.csv"), index=False)
+                feature_path = os.path.join(feature_importance_dir, f"{name}_feature_importance.csv")
+                importance_df.to_csv(feature_path, index=False)
+                mlflow.log_artifact(feature_path)
 
-
+            
             signature = infer_signature(X_test, y_pred)
             mlflow.sklearn.log_model(best_model, name, signature=signature)
 
-            joblib.dump(best_model, os.path.join(model_save_dir, f"{name}_model.pkl"))
+            model_path = os.path.join(model_save_dir, f"{name}_model.pkl")
+            joblib.dump(best_model, model_path)
             print(f"Model {name} trained and logged to MLflow")

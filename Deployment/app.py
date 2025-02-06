@@ -15,7 +15,7 @@ app = Flask(__name__)
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
-        print("I was called ")
+
         input_data = request.get_json()
         processed_data = preprocess_data(input_data)
         predictions = predict_mental_health(processed_data)

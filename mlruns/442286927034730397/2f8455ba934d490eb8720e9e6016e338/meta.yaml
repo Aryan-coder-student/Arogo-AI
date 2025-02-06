@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/My%20File/Internship/Arogo%20AI/mlruns/442286927034730397/2f8455ba934d490eb8720e9e6016e338/artifacts
+end_time: 1738863756293
+entry_point_name: ''
+experiment_id: '442286927034730397'
+lifecycle_stage: active
+run_id: 2f8455ba934d490eb8720e9e6016e338
+run_name: Decision Tree
+run_uuid: 2f8455ba934d490eb8720e9e6016e338
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738863752443
+status: 3
+tags: []
+user_id: ASUS
