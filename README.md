@@ -1,17 +1,12 @@
-Got it! I’ve ensured that **each file description** is included and clearly highlighted in the updated `README.md`. Here's the revised version with all file descriptions intact and organized for better readability:
-
----
-
-```markdown
 # 🧠 Mental Health Treatment Prediction: ML Pipeline
 
-![Project Banner](screenshots/banner.png) <!-- Add a banner image here -->
+![Project Banner](image.png) <!-- Add a banner image here -->
 
 A **machine learning pipeline** for predicting mental health treatment needs, featuring **data preprocessing**, **model training**, **experiment tracking**, **Flask API**, and an **interactive Streamlit app**.
 
 ---
 
-## 🚀 **Features**
+## 🚀 **Key Features**
 
 - **Data Preprocessing**: Clean, encode, and balance datasets using **SMOTE**.
 - **Model Training**: Train and evaluate multiple ML models (Logistic Regression, Random Forest, SVM, etc.).
@@ -23,57 +18,106 @@ A **machine learning pipeline** for predicting mental health treatment needs, fe
 
 ---
 
+## 📂 **Project Structure**
+
+```
+mental-health-prediction/
+├── data/
+│   ├── raw/                # Raw dataset
+│   ├── processed/          # Processed dataset
+│   └── gold/               # Final preprocessed dataset
+├── models/                 # Trained models
+├── src/
+│   ├── pre_process.py      # Data preprocessing script
+│   ├── train.py            # Model training script
+│   ├── model.py            # ML model definitions
+│   ├── utils.py            # Helper functions
+│   ├── predict_mental_health.py  # Prediction script
+│   ├── app.py              # Flask API
+│   └── streamlit_app.py    # Streamlit app
+├── requirements.txt        # Python dependencies
+├── dvc.yaml                # DVC pipeline configuration
+└── README.md               # Project documentation
+```
+
+---
+
 ## 📂 **File Descriptions**
 
 ### **1. `pre_process.py`**
-- Loads and preprocesses raw data.
-- Cleans and encodes categorical values.
-- Handles missing values and outliers.
-- Balances the dataset using **SMOTE**.
-- Saves the processed dataset in `./data/gold/`.
+- **Purpose**: Handles data preprocessing tasks.
+- **Key Functions**:
+  - Loads raw data from `data/raw/`.
+  - Cleans and encodes categorical values (e.g., gender, work interference).
+  - Handles missing values and outliers.
+  - Balances the dataset using **SMOTE** to address class imbalance.
+  - Saves the processed dataset in `data/gold/` for downstream tasks.
+
+---
 
 ### **2. `train.py`**
-- Loads the processed dataset.
-- Splits data into `train` and `test` sets.
-- Trains multiple machine learning models.
-- Logs experiment tracking using **MLflow**.
-- Saves trained models to `./models/`.
+- **Purpose**: Trains and evaluates machine learning models.
+- **Key Functions**:
+  - Loads the preprocessed dataset from `data/gold/`.
+  - Splits data into `train` and `test` sets.
+  - Trains multiple ML models (e.g., Logistic Regression, Random Forest, SVM).
+  - Logs experiments (e.g., hyperparameters, metrics) using **MLflow**.
+  - Saves trained models to `models/` for future use.
+
+---
 
 ### **3. `model.py`**
-- Defines various **ML models**:
-  - Logistic Regression
-  - Random Forest
-  - SVM
-  - KNN
-  - Decision Tree
-  - Gradient Boosting
-  - Naive Bayes
-- Uses **GridSearchCV** for hyperparameter tuning.
-- Logs model performance (Accuracy, Precision, Recall, F1-score, ROC AUC).
+- **Purpose**: Defines and configures machine learning models.
+- **Key Functions**:
+  - Implements various ML models:
+    - Logistic Regression
+    - Random Forest
+    - SVM
+    - KNN
+    - Decision Tree
+    - Gradient Boosting
+    - Naive Bayes
+  - Uses **GridSearchCV** for hyperparameter tuning.
+  - Logs model performance metrics (Accuracy, Precision, Recall, F1-score, ROC AUC).
+
+---
 
 ### **4. `utils.py`**
-- Contains helper functions for:
-  - Data cleaning (`remove_duplicates`, `fill_missing_values`, `clean_gender`).
-  - Feature transformation (`transform_data`).
-  - Dataset balancing (`balance_data`).
+- **Purpose**: Contains helper functions for data processing and transformation.
+- **Key Functions**:
+  - `remove_duplicates`: Removes duplicate rows from the dataset.
+  - `fill_missing_values`: Handles missing data using appropriate strategies.
+  - `clean_gender`: Standardizes gender values (e.g., "Male", "Female", "Other").
+  - `transform_data`: Encodes categorical features and scales numerical features.
+  - `balance_data`: Balances the dataset using **SMOTE**.
+
+---
 
 ### **5. `predict_mental_health.py`**
-- Loads trained models from the `models/` directory.
-- Preprocesses input data using the saved pipeline.
-- Predicts **mental health treatment needs** for new data.
-- Returns model confidence scores and precision metrics.
+- **Purpose**: Generates predictions using trained models.
+- **Key Functions**:
+  - Loads trained models from the `models/` directory.
+  - Preprocesses input data using the saved pipeline.
+  - Predicts **mental health treatment needs** for new data.
+  - Returns model confidence scores and precision metrics.
+
+---
 
 ### **6. `app.py` (Flask API)**
-- A **REST API** for real-time predictions.
-- Accepts **POST** requests at `/predict`.
-- Returns JSON responses with:
-  - **Prediction** (Treatment Needed / Not Needed)
-  - **Confidence Score**
-  - **Model Performance Summary**
+- **Purpose**: Provides a REST API for real-time predictions.
+- **Key Features**:
+  - Accepts **POST** requests at `/predict`.
+  - Returns JSON responses with:
+    - **Prediction** (Treatment Needed / Not Needed)
+    - **Confidence Score**
+    - **Model Performance Summary**
+  - Example usage: Integrate with frontend applications or external systems.
+
+---
 
 ### **7. `streamlit_app.py` (Interactive Web App)**
-- A **Streamlit-based UI** for real-time predictions and model evaluation.
-- Features:
+- **Purpose**: Provides an interactive UI for predictions and model insights.
+- **Key Features**:
   - **User-friendly form** for entering mental health survey data.
   - **Live predictions** from multiple models.
   - **Visualization tabs** for:
@@ -90,6 +134,7 @@ A **machine learning pipeline** for predicting mental health treatment needs, fe
 ## 🛠️ **How to Run**
 
 ### 1️⃣ **Install Dependencies**
+Install all required Python packages:
 ```bash
 pip install -r requirements.txt
 ```
@@ -168,7 +213,7 @@ curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -
 ## 🎥 **Demo**
 
 ### **Streamlit App UI**
-![alt text](image.png)
+![Streamlit App Screenshot](image.png)
 
 ### **Demo Video**
 [Watch Demo](videos/demo.mp4)
@@ -189,6 +234,7 @@ The **Streamlit app** provides:
 
 #### Example: Feature Importance
 ![Feature Importance](ec29070c1b1006fa89f69cdb5d9af2a2d4c2eef74c537c0ebd61fe21.png)
+
 ---
 
 ## 🔧 **Tech Stack**
@@ -216,18 +262,15 @@ The **Streamlit app** provides:
 ## ✨ **Author**
 
 **Your Name**  
-📧 **Contact**: aryanpahari037@gmail.com 
+📧 **Contact**: aryanpahari037@gmail.com  
 
 ---
 
 🚀 **Happy Predicting!** 🎯
-```
 
 ---
 
-### **Key Changes**
-1. **File Descriptions Section**: Added a dedicated section for file descriptions, ensuring each file is clearly explained.
-2. **Improved Structure**: Organized the content into logical sections for better navigation.
-3. **Visual Enhancements**: Added emojis and placeholders for images/videos to make the README more engaging.
-
-Let me know if you need further adjustments! 🚀
+### **Key Additions**
+1. **File Descriptions**: Added detailed descriptions for each file, explaining its purpose and key functions.
+2. **Improved Readability**: Organized content into clear sections with consistent formatting.
+3. **Visuals**: Included placeholders for screenshots and demo videos.
