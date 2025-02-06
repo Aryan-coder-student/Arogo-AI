@@ -9,8 +9,8 @@ stages:
       size: 303684
     - path: src/pre_process.py
       hash: md5
-      md5: 497af0632122d588a143abd2e6a5c093
-      size: 1807
+      md5: b8254f432308e278ed27362372cec060
+      size: 1821
     - path: src/utils.py
       hash: md5
       md5: 606dd67a928fb52cee5c1adafe8031e0
@@ -37,8 +37,8 @@ stages:
       size: 101045
     - path: src/model.py
       hash: md5
-      md5: 82af7dfbc9c82765a4e002f7de7bc4d5
-      size: 4235
+      md5: fcf87523a47fd95d268c66aad8aa56b1
+      size: 4207
     - path: src/train.py
       hash: md5
       md5: c52c0dec56a08684edf63d422983761b
@@ -46,6 +46,13 @@ stages:
     outs:
     - path: models/
       hash: md5
-      md5: e93f898762f62caf2d743b82f7e1c891.dir
-      size: 5578479
+      md5: f96ae6fda16a4887889c857839035e37.dir
+      size: 5618463
       nfiles: 7
+  requirements:
+    cmd: pip install -r requirements.txt
+    deps:
+    - path: requirements.txt
+      hash: md5
+      md5: 42a5e3e29be9e8ee6b31ce35fdbba9c0
+      size: 109
