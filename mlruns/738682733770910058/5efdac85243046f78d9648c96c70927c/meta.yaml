@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/My%20File/Internship/Arogo%20AI/mlruns/738682733770910058/5efdac85243046f78d9648c96c70927c/artifacts
+end_time: 1738867493223
+entry_point_name: ''
+experiment_id: '738682733770910058'
+lifecycle_stage: active
+run_id: 5efdac85243046f78d9648c96c70927c
+run_name: KNN
+run_uuid: 5efdac85243046f78d9648c96c70927c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738867488795
+status: 3
+tags: []
+user_id: ASUS

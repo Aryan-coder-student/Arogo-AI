@@ -28,7 +28,7 @@ feature_names = df_train.columns[:-1]
 
 mlflow.set_experiment("Model_Training_Experiment")
 
-
-train_and_evaluate_models(X_train, y_train, X_test, y_test, feature_names)
+if __name__ == "__main__":
+    train_and_evaluate_models(X_train, y_train, X_test, y_test, feature_names)
 
 print("Model training and evaluation complete.")

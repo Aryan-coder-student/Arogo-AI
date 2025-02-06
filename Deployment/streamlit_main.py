@@ -168,7 +168,7 @@ with tab1:
                             st.warning(f"LIME explanation not found for {model_simple_name}")
                             
                         try:
-                            importance_path = f"results/{model_simple_name}_feature_importance.csv"
+                            importance_path = f"feature_importance/{model_simple_name}_feature_importance.csv"
                             if os.path.exists(importance_path):
                                 st.markdown("#### Feature Importance")
                                 importance_df = pd.read_csv(importance_path)
@@ -233,7 +233,7 @@ with tab2:
 
     with metric_tab4:
         st.header("Feature Importance")
-        results_dir = "results"
+        results_dir = "feature_importance"
         for file in os.listdir(results_dir):
             if file.endswith('feature_importance.csv'):
                 model_name = file.replace('_feature_importance.csv', '')

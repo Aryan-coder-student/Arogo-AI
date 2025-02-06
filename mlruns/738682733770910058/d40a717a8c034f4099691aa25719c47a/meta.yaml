@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/My%20File/Internship/Arogo%20AI/mlruns/738682733770910058/d40a717a8c034f4099691aa25719c47a/artifacts
+end_time: 1738867472485
+entry_point_name: ''
+experiment_id: '738682733770910058'
+lifecycle_stage: active
+run_id: d40a717a8c034f4099691aa25719c47a
+run_name: Logistic Regression
+run_uuid: d40a717a8c034f4099691aa25719c47a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738867463835
+status: 3
+tags: []
+user_id: ASUS

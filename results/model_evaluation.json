@@ -1,0 +1,75 @@
+{
+    "Logistic Regression": {
+        "Best Params": {
+            "C": 1,
+            "solver": "liblinear"
+        },
+        "Accuracy": 0.6747967479674797,
+        "Precision": 0.67523958158672,
+        "Recall": 0.6747967479674797,
+        "F1 Score": 0.6748397415227457,
+        "ROC AUC": 0.7343253968253969
+    },
+    "Random Forest": {
+        "Best Params": {
+            "max_depth": null,
+            "n_estimators": 200
+        },
+        "Accuracy": 0.7235772357723578,
+        "Precision": 0.724088616152686,
+        "Recall": 0.7235772357723578,
+        "F1 Score": 0.7230639839554894,
+        "ROC AUC": 0.7719246031746032
+    },
+    "Gradient Boosting": {
+        "Best Params": {
+            "learning_rate": 0.1,
+            "n_estimators": 50
+        },
+        "Accuracy": 0.7235772357723578,
+        "Precision": 0.7245174122864224,
+        "Recall": 0.7235772357723578,
+        "F1 Score": 0.7228432888378005,
+        "ROC AUC": 0.7834656084656084
+    },
+    "SVM": {
+        "Best Params": {
+            "C": 1,
+            "kernel": "rbf"
+        },
+        "Accuracy": 0.7113821138211383,
+        "Precision": 0.711338808617359,
+        "Recall": 0.7113821138211383,
+        "F1 Score": 0.7113487017913822,
+        "ROC AUC": 0.7532407407407407
+    },
+    "KNN": {
+        "Best Params": {
+            "n_neighbors": 7,
+            "weights": "distance"
+        },
+        "Accuracy": 0.6707317073170732,
+        "Precision": 0.6735060184456392,
+        "Recall": 0.6707317073170732,
+        "F1 Score": 0.6702361739743548,
+        "ROC AUC": 0.697585978835979
+    },
+    "Decision Tree": {
+        "Best Params": {
+            "max_depth": 10
+        },
+        "Accuracy": 0.6138211382113821,
+        "Precision": 0.614726781820852,
+        "Recall": 0.6138211382113821,
+        "F1 Score": 0.613776467435004,
+        "ROC AUC": 0.6261243386243385
+    },
+    "Naive Bayes": {
+        "Best Params": {},
+        "Accuracy": 0.6626016260162602,
+        "Precision": 0.6625454099442736,
+        "Recall": 0.6626016260162602,
+        "F1 Score": 0.6625625668828835,
+        "ROC AUC": 0.7170634920634921
+    }
+}

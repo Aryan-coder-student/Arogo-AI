@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/My%20File/Internship/Arogo%20AI/mlruns/738682733770910058/1170ce1376204cd29954055442595943/artifacts
+end_time: 1738867488787
+entry_point_name: ''
+experiment_id: '738682733770910058'
+lifecycle_stage: active
+run_id: 1170ce1376204cd29954055442595943
+run_name: SVM
+run_uuid: 1170ce1376204cd29954055442595943
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738867483790
+status: 3
+tags: []
+user_id: ASUS

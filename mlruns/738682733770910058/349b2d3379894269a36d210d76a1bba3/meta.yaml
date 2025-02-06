@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/My%20File/Internship/Arogo%20AI/mlruns/738682733770910058/349b2d3379894269a36d210d76a1bba3/artifacts
+end_time: 1738867483781
+entry_point_name: ''
+experiment_id: '738682733770910058'
+lifecycle_stage: active
+run_id: 349b2d3379894269a36d210d76a1bba3
+run_name: Gradient Boosting
+run_uuid: 349b2d3379894269a36d210d76a1bba3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738867478685
+status: 3
+tags: []
+user_id: ASUS
