@@ -216,7 +216,7 @@ curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -
 ![Streamlit App Screenshot](image.png)
 
 ### **Demo Video**
-[Watch Demo](videos/demo.mp4)
+[Watch Demo](https://youtu.be/JuLNLVQ3vrM)
 
 ---
 
