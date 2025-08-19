@@ -216,7 +216,7 @@ curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -
 ![Streamlit App Screenshot](image.png)
 
 ### **Demo Video**
-[Watch Demo](https://youtu.be/JuLNLVQ3vrM)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JuLNLVQ3vrM?si=PE_Mw-CwxG5-Zl3H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
