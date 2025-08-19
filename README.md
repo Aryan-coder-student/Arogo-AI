@@ -212,11 +212,11 @@ curl -X POST http://localhost:5000/predict -H "Content-Type: application/json" -
 
 ## 🎥 **Demo**
 
-### **Streamlit App UI**
-![Streamlit App Screenshot](image.png)
 
 ### **Demo Video**
-[![Watch the video](https://img.youtube.com/vi/JuLNLVQ3vrM/0.jpg)](https://www.youtube.com/watch?v=JuLNLVQ3vrM)
+<a href="https://www.youtube.com/watch?v=JuLNLVQ3vrM" target="_blank">
+  <img src="https://img.youtube.com/vi/JuLNLVQ3vrM/0.jpg" width="800" alt="Watch the video" />
+</a>
 
 ---
 
